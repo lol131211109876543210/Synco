@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SynCO - Portal de Carga de Documentos</title>
+    <!-- Estilos Base y Específicos -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/portal.css">
+</head>
+<body>
+
+    <!-- Header y Navbar del Portal -->
+    <header class="portal-navbar">
+        <div class="portal-brand">
+            <div class="portal-brand-icon">S</div>
+            <div>
+                <div class="portal-brand-title">SynCO</div>
+                <div class="portal-brand-subtitle">Portal de Aspirantes</div>
+            </div>
+        </div>
+
+        <!-- Selector de Navegación Rápida Demo -->
+        <div class="prototype-nav">
+            <a href="portal.html" class="nav-pill active">Portal Aspirante</a>
+            <a href="login.html" class="nav-pill">Login RRHH</a>
+            <a href="admin.html" class="nav-pill">Dashboard RRHH</a>
+        </div>
+    </header>
+
+    <!-- Contenedor Principal del Aspirante -->
+    <main class="portal-container">
+        
+        <!-- Badge y Título de la Convocatoria -->
+        <div>
+            <span class="process-badge">Proceso activo · Convocatoria Agosto 2026</span>
+            <h1 class="portal-title">Carga de Documentos</h1>
+            <p class="portal-subtitle">Conductor Logístico · Bogotá, D.C. · Acceso por enlace temporal</p>
+        </div>
+
+        <!-- Tarjeta de Progreso General -->
+        <div class="progress-card">
+            <div class="progress-header">
+                <div class="progress-info">
+                    <h3>2 de 4 documentos subidos</h3>
+                    <p>Faltan 2 documentos por cargar.</p>
+                </div>
+                <div class="progress-percentage">
+                    50%
+                    <span>completado</span>
+                </div>
+            </div>
+
+            <!-- Barra Visual de Progreso -->
+            <div class="progress-bar-track">
+                <div class="progress-bar-fill" style="width: 50%;"></div>
+            </div>
+
+            <div class="progress-stats">
+                <div><span class="stat-dot uploaded"></span>2 subidos</div>
+                <div><span class="stat-dot pending"></span>2 pendientes</div>
+            </div>
+        </div>
+
+        <!-- Banner Informativo de Procesamiento Automático -->
+        <div class="info-banner">
+            <div class="info-banner-left">
+                <div class="info-icon">!</div>
+                <div class="info-text">
+                    <h4>Procesamiento automático incluido</h4>
+                    <p>Tus fotos se recortarán y convertirán a PDF automáticamente. <strong>No requiere instalar ninguna aplicación.</strong> Si la foto sale mal, podrás tomar otra.</p>
+                </div>
+            </div>
+            <div class="info-metrics">
+                <div class="metric-item">
+                    <div class="val">256</div>
+                    <div class="lbl">Cifrado</div>
+                </div>
+                <div class="metric-item">
+                    <div class="val">PDF</div>
+                    <div class="lbl">Auto</div>
+                </div>
+                <div class="metric-item">
+                    <div class="val">0</div>
+                    <div class="lbl">Instalaciones</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grilla de Documentos (2 Subidos y 2 Pendientes) -->
+        <div class="documents-grid">
+            
+            <!-- Documento 01: Cédula de Ciudadanía (SUBIDO) -->
+            <div class="doc-card completed">
+                <div class="doc-card-header">
+                    <span class="doc-type-badge">Documento 01</span>
+                    <span class="doc-status-pill subido">Subido</span>
+                </div>
+                <h3 class="doc-title">Cédula de Ciudadanía</h3>
+                <p class="doc-desc">Documento de identidad por ambas caras</p>
+
+                <!-- Vista Previa de Archivo Subido -->
+                <div class="file-uploaded-preview">
+                    <div class="file-info">
+                        <div class="file-icon">📄</div>
+                        <div>
+                            <div class="file-name">cedula_ciudadania.pdf</div>
+                            <div class="file-status">Convertido a PDF · Listo</div>
+                        </div>
+                    </div>
+                    <button class="btn-change-file">Cambiar</button>
+                </div>
+                <p style="font-size: 0.75rem; color: var(--color-success); display: flex; align-items: center; gap: 4px;">
+                    ✓ Documento verificado y almacenado correctamente
+                </p>
+            </div>
+
+            <!-- Documento 02: Hoja de Vida (SUBIDO) -->
+            <div class="doc-card completed">
+                <div class="doc-card-header">
+                    <span class="doc-type-badge">Documento 02</span>
+                    <span class="doc-status-pill subido">Subido</span>
+                </div>
+                <h3 class="doc-title">Hoja de Vida</h3>
+                <p class="doc-desc">Hoja de vida actualizada</p>
+
+                <!-- Vista Previa de Archivo Subido -->
+                <div class="file-uploaded-preview">
+                    <div class="file-info">
+                        <div class="file-icon">📄</div>
+                        <div>
+                            <div class="file-name">hoja_de_vida.pdf</div>
+                            <div class="file-status">Convertido a PDF · Listo</div>
+                        </div>
+                    </div>
+                    <button class="btn-change-file">Cambiar</button>
+                </div>
+                <p style="font-size: 0.75rem; color: var(--color-success); display: flex; align-items: center; gap: 4px;">
+                    ✓ Documento verificado y almacenado correctamente
+                </p>
+            </div>
+
+            <!-- Documento 03: Certificado de Estudios (PENDIENTE) -->
+            <div class="doc-card">
+                <div class="doc-card-header">
+                    <span class="doc-type-badge">Documento 03</span>
+                    <span class="doc-status-pill pendiente">Pendiente</span>
+                </div>
+                <h3 class="doc-title">Certificado de Estudios</h3>
+                <p class="doc-desc">Diploma de bachillerato, técnico, tecnólogo o universitario según aplique</p>
+
+                <!-- Zona Dual de Subida -->
+                <div class="upload-options-grid">
+                    <div class="upload-box upload-box-primary">
+                        <div class="box-icon">📤</div>
+                        <div class="box-title">Subir archivo de mi PC</div>
+                        <div class="box-subtitle">JPG, PNG, PDF, Word</div>
+                    </div>
+                    <div class="upload-box">
+                        <div class="box-icon">📷</div>
+                        <div class="box-title" style="color: var(--text-title);">Usar Cámara Web</div>
+                        <div class="box-subtitle">Sin instalaciones</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documento 04: Certificado Laboral (PENDIENTE) -->
+            <div class="doc-card">
+                <div class="doc-card-header">
+                    <span class="doc-type-badge">Documento 04</span>
+                    <span class="doc-status-pill pendiente">Pendiente</span>
+                </div>
+                <h3 class="doc-title">Certificado Laboral</h3>
+                <p class="doc-desc">Carta firmada por empleador anterior con cargo, fechas y salario devengado</p>
+
+                <!-- Zona Dual de Subida -->
+                <div class="upload-options-grid">
+                    <div class="upload-box upload-box-primary">
+                        <div class="box-icon">📤</div>
+                        <div class="box-title">Subir archivo de mi PC</div>
+                        <div class="box-subtitle">JPG, PNG, PDF, Word</div>
+                    </div>
+                    <div class="upload-box">
+                        <div class="box-icon">📷</div>
+                        <div class="box-title" style="color: var(--text-title);">Usar Cámara Web</div>
+                        <div class="box-subtitle">Sin instalaciones</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer de Envío de Expediente -->
+        <div class="portal-footer-action">
+            <div class="footer-text">
+                <h4>Completa todos los documentos para continuar</h4>
+                <p>2 documentos pendientes · Tiempo estimado: 4 min</p>
+            </div>
+            <button class="btn btn-outline" disabled style="opacity: 0.5; cursor: not-allowed;">
+                Enviar Expediente ➔
+            </button>
+        </div>
+
+    </main>
+
+</body>
+</html>

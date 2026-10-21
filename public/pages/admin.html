@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SynCO - Administración Global</title>
+    <!-- Estilos Base y Específicos -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar / Menú Lateral Fijo -->
+        <aside class="sidebar">
+            <div>
+                <!-- Brand / Logo -->
+                <div class="sidebar-header">
+                    <div class="sidebar-logo-icon">S</div>
+                    <div class="sidebar-brand">
+                        <h2>SynCO</h2>
+                        <p>Panel de RRHH</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Estadísticas Rápidas en Sidebar -->
+                <div class="sidebar-stats-card">
+                    <div class="sidebar-stats-title">Total Aspirantes</div>
+                    <div style="font-size: 1.8rem; font-weight: 700; margin-bottom: 8px;">7</div>
+                    <div class="sidebar-stats-grid">
+                        <div class="stat-item">
+                            <div class="number" style="color: #f59e0b;">2</div>
+                            <div class="label">Pendientes</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number" style="color: #10b981;">1</div>
+                            <div class="label">Aprobados</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number" style="color: #ef4444;">1</div>
+                            <div class="label">Rechazados</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number" style="color: #94a3b8;">3</div>
+                            <div class="label">Incompletos</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menú de Navegación -->
+                <nav class="sidebar-nav">
+                    <div class="nav-section-title">Módulos</div>
+                    <a href="expedientes.html" class="nav-item">
+                        <span>📁</span> Gestión de Expedientes
+                    </a>
+                    <a href="empleados.html" class="nav-item">
+                        <span>👤</span> Perfiles de Empleados
+                    </a>
+                    <a href="vacantes.html" class="nav-item">
+                        <span>🔒</span> Configuración de Vacantes
+                    </a>
+                    <a href="admin.html" class="nav-item active">
+                        <span>🌐</span> Administración Global
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Usuario y Logout -->
+            <div class="sidebar-user">
+                <div class="user-avatar">AP</div>
+                <div class="user-info">
+                    <div class="user-name">Ana Pérez</div>
+                    <div class="user-role">Analista de RRHH</div>
+                </div>
+                <button class="logout-btn" id="btnLogout" title="Cerrar Sesión">➔</button>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="main-content">
+            <!-- Barra Superior -->
+            <header class="top-bar">
+                <div class="page-title">
+                    <h1>Administración Global</h1>
+                    <p>Configuración general de la plataforma SynCO</p>
+                </div>
+                <!-- Nav / Tabs de prototipo rápido -->
+                <div class="prototype-nav">
+                    <a href="portal.html" class="nav-pill">Portal Aspirante</a>
+                    <a href="login.html" class="nav-pill">Login RRHH</a>
+                    <a href="admin.html" class="nav-pill active">Dashboard RRHH</a>
+                </div>
+            </header>
+
+            <!-- Área de Ajustes y Auditoría -->
+            <div class="content-wrapper">
+                
+                <!-- 1. Resumen del Sistema (Cards de Métricas) -->
+                <section>
+                    <h3 style="font-size: 1rem; margin-bottom: 16px;">Resumen del sistema</h3>
+                    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;">
+                        <div class="progress-card" style="text-align: center; padding: 16px;">
+                            <div style="font-size: 1.8rem; font-weight: 700;">7</div>
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">Total aspirantes</div>
+                        </div>
+                        <div class="progress-card" style="text-align: center; padding: 16px;">
+                            <div style="font-size: 1.8rem; font-weight: 700; color: #d97706;">2</div>
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">Pendientes</div>
+                        </div>
+                        <div class="progress-card" style="text-align: center; padding: 16px;">
+                            <div style="font-size: 1.8rem; font-weight: 700; color: #059669;">1</div>
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">Aprobados</div>
+                        </div>
+                        <div class="progress-card" style="text-align: center; padding: 16px;">
+                            <div style="font-size: 1.8rem; font-weight: 700; color: #dc2626;">1</div>
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">Rechazados</div>
+                        </div>
+                        <div class="progress-card" style="text-align: center; padding: 16px;">
+                            <div style="font-size: 1.8rem; font-weight: 700; color: #64748b;">3</div>
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">Incompletos</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. Formulario de Parámetros Globales (Notificaciones y Procesamiento) -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                    
+                    <!-- Notificaciones -->
+                    <div class="progress-card">
+                        <h4 style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+                            <span>✉️</span> Notificaciones
+                        </h4>
+                        <div class="form-group">
+                            <label class="form-label">Correo de notificaciones</label>
+                            <input type="email" class="form-input" value="rrhh@empresa.co">
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px;">
+                            <span style="font-size: 0.85rem;">Notificar al aspirante al aprobar</span>
+                            <input type="checkbox" checked style="accent-color: var(--primary-500); transform: scale(1.2);">
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px;">
+                            <span style="font-size: 0.85rem;">Notificar al aspirante al rechazar</span>
+                            <input type="checkbox" checked style="accent-color: var(--primary-500); transform: scale(1.2);">
+                        </div>
+                    </div>
+
+                    <!-- Procesamiento de Archivos -->
+                    <div class="progress-card">
+                        <h4 style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+                            <span>📄</span> Procesamiento de archivos
+                        </h4>
+                        <div class="form-group">
+                            <label class="form-label">Vigencia del enlace (Días)</label>
+                            <input type="number" class="form-input" value="7">
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px;">
+                            <span style="font-size: 0.85rem;">Recorte automático de imágenes</span>
+                            <input type="checkbox" checked style="accent-color: var(--primary-500); transform: scale(1.2);">
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px;">
+                            <span style="font-size: 0.85rem;">Conversión automática a PDF</span>
+                            <input type="checkbox" checked style="accent-color: var(--primary-500); transform: scale(1.2);">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Registro de Actividad Reciente (Auditoría) -->
+                <div class="progress-card">
+                    <h4 style="margin-bottom: 16px;">Registro de actividad reciente</h4>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 1px solid var(--border-light);">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <span style="background: #d1fae5; color: #059669; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem;">✓</span>
+                                <span style="font-size: 0.88rem;"><strong>Ana Pérez</strong> Aprobó expediente de <strong>Tomás Herrera</strong></span>
+                            </div>
+                            <span style="font-size: 0.78rem; color: var(--text-muted);">Hace 2 horas</span>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 1px solid var(--border-light);">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <span style="background: #fee2e2; color: #dc2626; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem;">✕</span>
+                                <span style="font-size: 0.88rem;"><strong>Ana Pérez</strong> Rechazó documento de <strong>Jorge Salcedo</strong></span>
+                            </div>
+                            <span style="font-size: 0.78rem; color: var(--text-muted);">Hace 4 horas</span>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 1px solid var(--border-light);">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <span style="background: #f1f5f9; color: #64748b; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem;">ℹ</span>
+                                <span style="font-size: 0.88rem;"><strong>Sistema</strong> Generó enlace temporal para <strong>Felipe Arango</strong></span>
+                            </div>
+                            <span style="font-size: 0.78rem; color: var(--text-muted);">Hace 5 horas</span>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <span style="background: #f1f5f9; color: #64748b; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem;">ℹ</span>
+                                <span style="font-size: 0.88rem;"><strong>Admin</strong> Creó vacante <strong>Coord. de Eventos</strong></span>
+                            </div>
+                            <span style="font-size: 0.78rem; color: var(--text-muted);">Hace 1 día</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Botones de Acción Infeiores -->
+                <div style="display: flex; justify-content: flex-end; gap: 12px;">
+                    <button class="btn btn-outline">Cancelar cambios</button>
+                    <button class="btn btn-primary">Guardar configuración</button>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

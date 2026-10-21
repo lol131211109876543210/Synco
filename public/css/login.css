@@ -1,0 +1,299 @@
+/* ==========================================================================
+   SynCO - LoginRRHH Stylesheet
+   Basado en la Pantalla 1 del Mockup
+   ========================================================================== */
+
+/* 1. Layout Principal de la Pantalla de Login
+   ========================================================================== */
+.login-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: var(--bg-app);
+}
+
+/* 2. Sección Izquierda: Hero / Panel Informativo Corporativo
+   ========================================================================== */
+.login-hero {
+    flex: 1.1;
+    background-color: var(--primary-800);
+    color: #ffffff;
+    padding: 48px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Marca superior (Logo + Nombre) */
+.brand-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-500);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.brand-text h2 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.brand-text p {
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+/* Hero Content (Titulares) */
+.hero-content {
+    margin: auto 0;
+    max-width: 520px;
+}
+
+.hero-title {
+    font-family: var(--font-serif);
+    font-size: 2.75rem;
+    line-height: 1.15;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Tarjetas de Estadísticas / Métricas de Impacto */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 20px 16px;
+    backdrop-filter: blur(8px);
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    line-height: 1.3;
+}
+
+/* Etiquetas de Sectores */
+.sectors-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.sector-chip {
+    padding: 6px 14px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    color: #cbd5e1;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Footer del Hero */
+.hero-footer {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-top: 24px;
+}
+
+/* 3. Sección Derecha: Formulario de Login
+   ========================================================================== */
+.login-form-section {
+    flex: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    background-color: var(--bg-app);
+}
+
+.login-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: 24px;
+    padding: 48px;
+    width: 100%;
+    max-width: 460px;
+    box-shadow: var(--shadow-md);
+}
+
+.login-card-header {
+    margin-bottom: 32px;
+}
+
+.login-card-header h1 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.login-card-header p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Estilos específicos de los campos de entrada */
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 14px;
+    color: var(--text-disabled);
+    font-size: 1.1rem;
+    pointer-events: none;
+}
+
+.input-with-icon .form-input {
+    padding-left: 44px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    background: none;
+    border: none;
+    color: var(--text-disabled);
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.toggle-password:hover {
+    color: var(--text-body);
+}
+
+.forgot-password-wrapper {
+    text-align: right;
+    margin-top: -8px;
+    margin-bottom: 24px;
+}
+
+.forgot-password-link {
+    font-size: 0.8rem;
+    color: var(--primary-600);
+}
+
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    font-size: 0.95rem;
+    background-color: var(--primary-800);
+    border-radius: var(--radius-md);
+}
+
+.btn-login:hover {
+    background-color: var(--primary-900);
+}
+
+/* Sección de Acceso Rápido para Demo (Botones inferiores del mockup) */
+.quick-access-section {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-light);
+}
+
+.quick-access-title {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.quick-access-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.btn-quick-access {
+    background-color: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 10px 12px;
+    text-align: left;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btn-quick-access:hover {
+    border-color: var(--primary-500);
+    background-color: var(--bg-app);
+}
+
+.quick-role {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-title);
+    display: block;
+}
+
+.quick-email {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    display: block;
+}
+
+/* 4. Responsive Design
+   ========================================================================== */
+@media (max-width: 992px) {
+    .login-container {
+        flex-direction: column;
+    }
+    
+    .login-hero {
+        padding: 32px 24px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .login-form-section {
+        padding: 32px 16px;
+    }
+}

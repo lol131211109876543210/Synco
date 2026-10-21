@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SynCO - Perfiles de Empleados</title>
+    <!-- Estilos Base y Específicos -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar / Menú Lateral Fijo -->
+        <aside class="sidebar">
+            <div>
+                <!-- Brand / Logo -->
+                <div class="sidebar-header">
+                    <div class="sidebar-logo-icon">S</div>
+                    <div class="sidebar-brand">
+                        <h2>SynCO</h2>
+                        <p>Panel de RRHH</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Estadísticas Rápidas -->
+                <div class="sidebar-stats-card">
+                    <div class="sidebar-stats-title">Total Aspirantes</div>
+                    <div style="font-size: 1.8rem; font-weight: 700; margin-bottom: 8px;">7</div>
+                    <div class="sidebar-stats-grid">
+                        <div class="stat-item">
+                            <div class="number" style="color: #f59e0b;">2</div>
+                            <div class="label">Pendientes</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number" style="color: #10b981;">1</div>
+                            <div class="label">Aprobados</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number" style="color: #ef4444;">1</div>
+                            <div class="label">Rechazados</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number" style="color: #94a3b8;">3</div>
+                            <div class="label">Incompletos</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menú de Navegación -->
+                <nav class="sidebar-nav">
+                    <div class="nav-section-title">Módulos</div>
+                    <a href="expedientes.html" class="nav-item">
+                        <span>📁</span> Gestión de Expedientes
+                    </a>
+                    <a href="empleados.html" class="nav-item active">
+                        <span>👤</span> Perfiles de Empleados
+                    </a>
+                    <a href="vacantes.html" class="nav-item">
+                        <span>🔒</span> Configuración de Vacantes
+                    </a>
+                    <a href="admin.html" class="nav-item">
+                        <span>🌐</span> Administración Global
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Usuario y Logout -->
+            <div class="sidebar-user">
+                <div class="user-avatar">AP</div>
+                <div class="user-info">
+                    <div class="user-name">Ana Pérez</div>
+                    <div class="user-role">Analista de RRHH</div>
+                </div>
+                <button class="logout-btn" id="btnLogout" title="Cerrar Sesión">➔</button>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="main-content">
+            <!-- Barra Superior -->
+            <header class="top-bar">
+                <div class="page-title">
+                    <h1>Perfiles de Empleados</h1>
+                    <p>5 empleados activos en el sistema</p>
+                </div>
+                <!-- Prototipo Nav -->
+                <div class="prototype-nav">
+                    <a href="portal.html" class="nav-pill">Portal Aspirante</a>
+                    <a href="login.html" class="nav-pill">Login RRHH</a>
+                    <a href="empleados.html" class="nav-pill active">Dashboard RRHH</a>
+                </div>
+            </header>
+
+            <!-- Área de Tarjetas de Empleados -->
+            <div class="content-wrapper">
+                
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+                    
+                    <!-- Empleado 1: Andrés Gómez (Activo) -->
+                    <div class="progress-card">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                            <div class="user-avatar" style="width: 48px; height: 48px; font-size: 1.1rem; background-color: #cbd5e1; color: #334155;">AG</div>
+                            <span class="status-badge aprobado">● Activo</span>
+                        </div>
+
+                        <h3 style="font-size: 1.1rem; margin-bottom: 2px;">Andrés Gómez</h3>
+                        <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-title);">Conductor Senior</p>
+                        <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 20px;">Logística · Bogotá</p>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding-top: 12px; border-top: 1px solid var(--border-light); margin-bottom: 16px;">
+                            <div>
+                                <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">Cédula</span>
+                                <strong style="font-size: 0.82rem;">79.456.123.5</strong>
+                            </div>
+                            <div>
+                                <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">Vinculado</span>
+                                <strong style="font-size: 0.82rem;">15/03/2024</strong>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 16px;">
+                            <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">Correo</span>
+                            <span style="font-size: 0.82rem; color: var(--primary-600);">andres.gomez@synco.co</span>
+                        </div>
+
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn btn-outline" style="flex: 1; font-size: 0.78rem; padding: 8px;">Ver perfil</button>
+                            <button class="btn btn-outline" style="flex: 1; font-size: 0.78rem; padding: 8px;">Documentos</button>
+                        </div>
+                    </div>
+
+                    <!-- Empleado 2: Sandra Patiño (Activo) -->
+                    <div class="progress-card">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                            <div class="user-avatar" style="width: 48px; height: 48px; font-size: 1.1rem; background-color: #cbd5e1; color: #334155;">SP</div>
+                            <span class="status-badge aprobado">● Activo</span>
+                        </div>
+
+                        <h3 style="font-size: 1.1rem; margin-bottom: 2px;">Sandra Patiño</h3>
+                        <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-title);">Aux. Logística</p>
+                        <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 20px;">Operaciones · Medellín</p>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding-top: 12px; border-top: 1px solid var(--border-light); margin-bottom: 16px;">
+                            <div>
+                                <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">Cédula</span>
+                                <strong style="font-size: 0.82rem;">52.321.654.8</strong>
+                            </div>
+                            <div>
+                                <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">Vinculado</span>
+                                <strong style="font-size: 0.82rem;">01/06/2025</strong>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 16px;">
+                            <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">Correo</span>
+                            <span style="font-size: 0.82rem; color: var(--primary-600);">sandra.patino@synco.co</span>
+                        </div>
+
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn btn-outline" style="flex: 1; font-size: 0.78rem; padding: 8px;">Ver perfil</button>
+                            <button class="btn btn-outline" style="flex: 1; font-size: 0.78rem; padding: 8px;">Documentos</button>
+                        </div>
+                    </div>
+
+                    <!-- Empleado 3: Mauricio León (Vacaciones) -->
+                    <div class="progress-card">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                            <div class="user-avatar" style="width: 48px; height: 48px; font-size: 1.1rem; background-color: #cbd5e1; color: #334155;">ML</div>
+                            <span class="status-badge pendiente">● Vacaciones</span>
+                        </div>
+
+                        <h3 style="font-size: 1.1rem; margin-bottom: 2px;">Mauricio León</h3>
+                        <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-title);">Operador</p>
+                        <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 20px;">Almacén · Cali</p>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding-top: 12px; border-top: 1px solid var(--border-light); margin-bottom: 16px;">
+                            <div>
+                                <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">Cédula</span>
+                                <strong style="font-size: 0.82rem;">80.543.218.9</strong>
+                            </div>
+                            <div>
+                                <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">Vinculado</span>
+                                <strong style="font-size: 0.82rem;">20/11/2023</strong>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 16px;">
+                            <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">Correo</span>
+                            <span style="font-size: 0.82rem; color: var(--primary-600);">mauricio.leon@synco.co</span>
+                        </div>
+
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn btn-outline" style="flex: 1; font-size: 0.78rem; padding: 8px;">Ver perfil</button>
+                            <button class="btn btn-outline" style="flex: 1; font-size: 0.78rem; padding: 8px;">Documentos</button>
+                        </div>
+                    </div>
+
+                    <!-- Empleado 4: Catalina Ruiz (Activo) -->
+                    <div class="progress-card">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                            <div class="user-avatar" style="width: 48px; height: 48px; font-size: 1.1rem; background-color: #cbd5e1; color: #334155;">CR</div>
+                            <span class="status-badge aprobado">● Activo</span>
+                        </div>
+
+                        <h3 style="font-size: 1.1rem; margin-bottom: 2px;">Catalina Ruiz</h3>
+                        <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-title);">Coord. Eventos</p>
+                        <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 20px;">Eventos · Bogotá</p>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding-top: 12px; border-top: 1px solid var(--border-light); margin-bottom: 16px;">
+                            <div>
+                                <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">Cédula</span>
+                                <strong style="font-size: 0.82rem;">1.828.345.678</strong>
+                            </div>
+                            <div>
+                                <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">Vinculado</span>
+                                <strong style="font-size: 0.82rem;">05/01/2026</strong>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 16px;">
+                            <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">Correo</span>
+                            <span style="font-size: 0.82rem; color: var(--primary-600);">catalina.ruiz@synco.co</span>
+                        </div>
+
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn btn-outline" style="flex: 1; font-size: 0.78rem; padding: 8px;">Ver perfil</button>
+                            <button class="btn btn-outline" style="flex: 1; font-size: 0.78rem; padding: 8px;">Documentos</button>
+                        </div>
+                    </div>
+
+                    <!-- Empleado 5: Hernando Vargas (Inactivo) -->
+                    <div class="progress-card">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                            <div class="user-avatar" style="width: 48px; height: 48px; font-size: 1.1rem; background-color: #cbd5e1; color: #334155;">HV</div>
+                            <span class="status-badge rechazado">● Inactivo</span>
+                        </div>
+
+                        <h3 style="font-size: 1.1rem; margin-bottom: 2px;">Hernando Vargas</h3>
+                        <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-title);">Conductor</p>
+                        <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 20px;">Logística · Pereira</p>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding-top: 12px; border-top: 1px solid var(--border-light); margin-bottom: 16px;">
+                            <div>
+                                <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">Cédula</span>
+                                <strong style="font-size: 0.82rem;">71.234.567.0</strong>
+                            </div>
+                            <div>
+                                <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">Vinculado</span>
+                                <strong style="font-size: 0.82rem;">01/09/2022</strong>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 16px;">
+                            <span style="font-size: 0.7rem; color: var(--text-muted); display: block;">Correo</span>
+                            <span style="font-size: 0.82rem; color: var(--primary-600);">hernando.vargas@synco.co</span>
+                        </div>
+
+                        <div style="display: flex; gap: 8px;">
+                            <button class="btn btn-outline" style="flex: 1; font-size: 0.78rem; padding: 8px;">Ver perfil</button>
+                            <button class="btn btn-outline" style="flex: 1; font-size: 0.78rem; padding: 8px;">Documentos</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

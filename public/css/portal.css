@@ -1,0 +1,446 @@
+/* ==========================================================================
+   SynCO - Portal de Aspirantes Stylesheet
+   Basado en las Pantallas 2 y 3 de los Mockups
+   ========================================================================== */
+
+/* 1. Navbar y Header del Portal
+   ========================================================================== */
+.portal-navbar {
+    background-color: var(--primary-800);
+    color: #ffffff;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.portal-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.portal-brand-icon {
+    width: 36px;
+    height: 36px;
+    background-color: var(--primary-500);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.portal-brand-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.portal-brand-subtitle {
+    font-size: 0.8rem;
+    color: var(--text-disabled);
+}
+
+/* Selector de prototipo superior (Botones flotantes de navegación) */
+.prototype-nav {
+    background-color: rgba(15, 23, 42, 0.4);
+    border-radius: var(--radius-full);
+    padding: 4px;
+    display: flex;
+    gap: 4px;
+}
+
+.nav-pill {
+    padding: 6px 16px;
+    border-radius: var(--radius-full);
+    font-size: 0.78rem;
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.nav-pill.active {
+    background-color: var(--primary-500);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* 2. Banner e Información de Convocatoria
+   ========================================================================== */
+.portal-container {
+    max-width: 960px;
+    margin: 32px auto;
+    padding: 0 24px;
+}
+
+.process-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background-color: var(--primary-100);
+    color: var(--primary-600);
+    border-radius: var(--radius-full);
+    font-size: 0.78rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.portal-title {
+    font-family: var(--font-serif);
+    font-size: 2.25rem;
+    color: var(--text-title);
+    margin-bottom: 6px;
+}
+
+.portal-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+/* 3. Tarjeta de Progreso de Carga
+   ========================================================================== */
+.progress-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 16px;
+}
+
+.progress-info h3 {
+    font-size: 1.25rem;
+    color: var(--text-title);
+}
+
+.progress-info p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.progress-percentage {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-success);
+    line-height: 1;
+}
+
+.progress-percentage span {
+    font-size: 0.75rem;
+    display: block;
+    text-align: right;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+/* Barra de Progreso CSS */
+.progress-bar-track {
+    width: 100%;
+    height: 12px;
+    background-color: #e2e8f0;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: var(--color-success);
+    border-radius: var(--radius-full);
+    transition: width 0.4s ease;
+}
+
+.progress-stats {
+    display: flex;
+    gap: 20px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.stat-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.stat-dot.uploaded { background-color: var(--color-success); }
+.stat-dot.pending { background-color: var(--border-medium); }
+
+/* 4. Banner Informativo de Procesamiento
+   ========================================================================== */
+.info-banner {
+    background-color: var(--color-info-bg);
+    border: 1px solid #bfdbfe;
+    border-radius: var(--radius-lg);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.info-banner-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.info-icon {
+    width: 36px;
+    height: 36px;
+    background-color: var(--primary-500);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.info-text h4 {
+    font-size: 0.9rem;
+    color: var(--primary-900);
+}
+
+.info-text p {
+    font-size: 0.8rem;
+    color: var(--text-body);
+}
+
+.info-metrics {
+    display: flex;
+    gap: 24px;
+    text-align: center;
+}
+
+.metric-item .val {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-900);
+}
+
+.metric-item .lbl {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+/* 5. Grilla de Documentos Requeridos
+   ========================================================================== */
+.documents-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.doc-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    transition: all var(--transition-normal);
+}
+
+/* Estado: Documento Ya Subido / Verificado */
+.doc-card.completed {
+    border-color: #a7f3d0;
+    background-color: #f0fdf4;
+}
+
+.doc-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.doc-type-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.doc-status-pill {
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+.doc-status-pill.subido {
+    background-color: var(--color-success-bg);
+    color: var(--color-success);
+}
+
+.doc-status-pill.pendiente {
+    background-color: #f1f5f9;
+    color: var(--text-muted);
+}
+
+.doc-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-title);
+    margin-bottom: 4px;
+}
+
+.doc-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    min-height: 36px;
+}
+
+/* Vista previa de archivo subido */
+.file-uploaded-preview {
+    background-color: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.file-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.file-icon {
+    width: 32px;
+    height: 32px;
+    background-color: #fee2e2;
+    color: #dc2626;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.file-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-title);
+}
+
+.file-status {
+    font-size: 0.72rem;
+    color: var(--color-success);
+}
+
+.btn-change-file {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Zona Dual de Subida (PC / Cámara Web) */
+.upload-options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.upload-box {
+    border: 2px dashed var(--border-medium);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    background-color: #ffffff;
+}
+
+.upload-box:hover {
+    border-color: var(--primary-500);
+    background-color: var(--color-info-bg);
+}
+
+.upload-box-primary {
+    background-color: var(--primary-800);
+    border: none;
+    color: #ffffff;
+}
+
+.upload-box-primary:hover {
+    background-color: var(--primary-900);
+}
+
+.box-icon {
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+}
+
+.box-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.box-subtitle {
+    font-size: 0.68rem;
+    opacity: 0.8;
+}
+
+/* 6. Footer de Confirmación y Envió
+   ========================================================================== */
+.portal-footer-action {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-text h4 {
+    font-size: 0.95rem;
+}
+
+.footer-text p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.btn-submit-expediente {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .documents-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .upload-options-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-banner {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+}

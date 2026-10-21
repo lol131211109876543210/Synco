@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SynCO - Gestión de Expedientes</title>
+    <!-- Estilos Base y Específicos -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar / Menú Lateral Fijo -->
+        <aside class="sidebar">
+            <div>
+                <!-- Brand / Logo -->
+                <div class="sidebar-header">
+                    <div class="sidebar-logo-icon">S</div>
+                    <div class="sidebar-brand">
+                        <h2>SynCO</h2>
+                        <p>Panel de RRHH</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Estadísticas Rápidas -->
+                <div class="sidebar-stats-card">
+                    <div class="sidebar-stats-title">Total Aspirantes</div>
+                    <div style="font-size: 1.8rem; font-weight: 700; margin-bottom: 8px;">7</div>
+                    <div class="sidebar-stats-grid">
+                        <div class="stat-item">
+                            <div class="number" style="color: #f59e0b;">2</div>
+                            <div class="label">Pendientes</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number" style="color: #10b981;">1</div>
+                            <div class="label">Aprobados</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number" style="color: #ef4444;">1</div>
+                            <div class="label">Rechazados</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number" style="color: #94a3b8;">3</div>
+                            <div class="label">Incompletos</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menú de Navegación -->
+                <nav class="sidebar-nav">
+                    <div class="nav-section-title">Módulos</div>
+                    <a href="expedientes.html" class="nav-item active">
+                        <span>📁</span> Gestión de Expedientes
+                    </a>
+                    <a href="empleados.html" class="nav-item">
+                        <span>👤</span> Perfiles de Empleados
+                    </a>
+                    <a href="vacantes.html" class="nav-item">
+                        <span>🔒</span> Configuración de Vacantes
+                    </a>
+                    <a href="admin.html" class="nav-item">
+                        <span>🌐</span> Administración Global
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Usuario y Logout -->
+            <div class="sidebar-user">
+                <div class="user-avatar">AP</div>
+                <div class="user-info">
+                    <div class="user-name">Ana Pérez</div>
+                    <div class="user-role">Analista de RRHH</div>
+                </div>
+                <button class="logout-btn" id="btnLogout" title="Cerrar Sesión">➔</button>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="main-content">
+            <!-- Barra Superior -->
+            <header class="top-bar">
+                <div class="page-title">
+                    <h1>Gestión de Expedientes</h1>
+                    <p>7 aspirantes · Agosto 2026</p>
+                </div>
+                <!-- Prototipo Nav -->
+                <div class="prototype-nav">
+                    <a href="portal.html" class="nav-pill">Portal Aspirante</a>
+                    <a href="login.html" class="nav-pill">Login RRHH</a>
+                    <a href="expedientes.html" class="nav-pill active">Dashboard RRHH</a>
+                </div>
+            </header>
+
+            <!-- Layout Dividido: Tabla + Visor PDF -->
+            <div class="content-wrapper" style="grid-template-columns: 1.1fr 0.9fr;">
+                
+                <!-- Columna Izquierda: Filtros y Lista de Aspirantes -->
+                <div class="table-container">
+                    <div class="table-header" style="flex-direction: column; align-items: stretch; gap: 12px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <input type="text" class="search-input" placeholder="🔍 Buscar nombre o cédula...">
+                            <button class="btn btn-outline" style="font-size: 0.78rem; padding: 6px 12px;">⬇ Descargar .ZIP</button>
+                        </div>
+                        
+                        <!-- Filtros (Pills) -->
+                        <div class="filter-pills">
+                            <button class="pill active">Todos</button>
+                            <button class="pill">Pendiente</button>
+                            <button class="pill">Aprobado</button>
+                            <button class="pill">Rechazado</button>
+                            <button class="pill">Incompleto</button>
+                        </div>
+                    </div>
+
+                    <!-- Tabla de Expedientes -->
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Aspirante</th>
+                                <th>Avance</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Carlos Mendoza (Seleccionado) -->
+                            <tr style="background-color: #f1f5f9; border-left: 4px solid var(--primary-500);">
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <div class="user-avatar" style="background-color: #cbd5e1; color: #334155;">CM</div>
+                                        <div>
+                                            <strong style="display: block;">Carlos Mendoza</strong>
+                                            <span style="font-size: 0.75rem; color: var(--text-muted);">1.834.567.890</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><strong>4/4</strong></td>
+                                <td><span class="status-badge pendiente">Pendiente</span></td>
+                            </tr>
+
+                            <!-- Laura Ríos -->
+                            <tr>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <div class="user-avatar" style="background-color: #cbd5e1; color: #334155;">LR</div>
+                                        <div>
+                                            <strong style="display: block;">Laura Ríos</strong>
+                                            <span style="font-size: 0.75rem; color: var(--text-muted);">52.768.432.1</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><strong>3/4</strong></td>
+                                <td><span class="status-badge incompleto">Incompleto</span></td>
+                            </tr>
+
+                            <!-- Tomás Herrera -->
+                            <tr>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <div class="user-avatar" style="background-color: #cbd5e1; color: #334155;">TH</div>
+                                        <div>
+                                            <strong style="display: block;">Tomás Herrera</strong>
+                                            <span style="font-size: 0.75rem; color: var(--text-muted);">79.345.621.8</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><strong>4/4</strong></td>
+                                <td><span class="status-badge aprobado">Aprobado</span></td>
+                            </tr>
+
+                            <!-- Diana Castro -->
+                            <tr>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <div class="user-avatar" style="background-color: #cbd5e1; color: #334155;">DC</div>
+                                        <div>
+                                            <strong style="display: block;">Diana Castro</strong>
+                                            <span style="font-size: 0.75rem; color: var(--text-muted);">1.823.456.789</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><strong>2/4</strong></td>
+                                <td><span class="status-badge incompleto">Incompleto</span></td>
+                            </tr>
+
+                            <!-- Jorge Salcedo -->
+                            <tr>
+                                <td>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <div class="user-avatar" style="background-color: #cbd5e1; color: #334155;">JS</div>
+                                        <div>
+                                            <strong style="display: block;">Jorge Salcedo</strong>
+                                            <span style="font-size: 0.75rem; color: var(--text-muted);">80.234.567.2</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><strong>3/4</strong></td>
+                                <td><span class="status-badge rechazado">Rechazado</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Columna Derecha: Detalle de Expediente y Visor de PDF -->
+                <div style="display: flex; flex-direction: column; gap: 16px;">
+                    
+                    <!-- Tarjeta de Detalle del Aspirante -->
+                    <div class="progress-card">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                            <div>
+                                <h3 style="font-size: 1.25rem;">Carlos Mendoza</h3>
+                                <p style="font-size: 0.8rem; color: var(--text-muted);">CC 1.834.567.890 · Conductor · Bogotá</p>
+                            </div>
+                            <span class="status-badge pendiente">Pendiente</span>
+                        </div>
+
+                        <!-- Selector de Documento de la Lista -->
+                        <div style="display: flex; gap: 6px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 16px; border-bottom: 1px solid var(--border-light);">
+                            <button class="pill active" style="font-size: 0.75rem;">📄 Cédula de Ciudadanía</button>
+                            <button class="pill" style="font-size: 0.75rem;">📄 Hoja de Vida</button>
+                            <button class="pill" style="font-size: 0.75rem;">📄 Cert. Estudios</button>
+                            <button class="pill" style="font-size: 0.75rem;">📄 Cert. Laboral</button>
+                        </div>
+
+                        <!-- Visor Simulado de PDF -->
+                        <div class="pdf-viewer-card">
+                            <div class="pdf-header">
+                                <span>📄 cedula_de_ciudadania.pdf</span>
+                                <div>
+                                    <span style="font-size: 0.75rem; margin-right: 12px;">Pág 1/1</span>
+                                    <button class="btn btn-outline" style="color: white; padding: 2px 8px; font-size: 0.7rem;">🔍 Zoom</button>
+                                </div>
+                            </div>
+                            <div class="pdf-body">
+                                <div style="text-align: center; padding: 24px;">
+                                    <div style="font-size: 2.5rem; margin-bottom: 8px;">🆔</div>
+                                    <h4 style="font-family: var(--font-serif);">REPÚBLICA DE COLOMBIA</h4>
+                                    <h3 style="margin-bottom: 12px;">CÉDULA DE CIUDADANÍA</h3>
+                                    <p style="font-size: 0.85rem; color: var(--text-muted);">NOMBRE DEL ASPIRANTE</p>
+                                    <p style="font-size: 1.1rem; font-weight: 700;">Carlos Mendoza</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Acciones: Aprobar / Motivo de Rechazo -->
+                        <div style="margin-top: 20px;">
+                            <div class="form-group" style="margin-bottom: 12px;">
+                                <label class="form-label" style="color: #dc2626;">Causa de rechazo (Obligatoria para rechazar)</label>
+                                <textarea class="form-textarea" rows="2" placeholder="Especificar causa de rechazo (ej. imagen ilegible) para notificar al aspirante..."></textarea>
+                            </div>
+                            
+                            <div style="display: flex; gap: 12px;">
+                                <button class="btn btn-success" style="flex: 1;">✓ Aprobar Expediente</button>
+                                <button class="btn btn-danger" style="flex: 1;">✕ Rechazar</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

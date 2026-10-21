@@ -1,0 +1,24 @@
+# Dependencias de Node.js
+node_modules/
+
+# Variables de entorno y credenciales sensibles
+.env
+
+# Archivos subidos por los usuarios (mantiene la carpeta pero ignora su contenido)
+uploads/*
+!uploads/.gitkeep
+
+# Registros de errores y logs de Node / npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Configuraciones de editores de código (opcional, por si usas VS Code)
+.vscode/
+.idea/

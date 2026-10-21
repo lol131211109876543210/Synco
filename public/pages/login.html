@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SynCO - Iniciar Sesión RRHH</title>
+    <!-- Estilos Base y Específicos -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+
+    <div class="login-container">
+        
+        <!-- Panel Izquierdo: Hero Corporativo de SynCO -->
+        <section class="login-hero">
+            <!-- Header de Marca -->
+            <div class="brand-header">
+                <div class="brand-icon">S</div>
+                <div class="brand-text">
+                    <h2>SynCO</h2>
+                    <p>Sincronización Corporativa</p>
+                </div>
+            </div>
+
+            <!-- Contenido Principal Informativo -->
+            <div class="hero-content">
+                <h1 class="hero-title">Gestión documental sin fricciones.</h1>
+                <p class="hero-subtitle">Centraliza, valida y aprueba la documentación de tus aspirantes en tiempo real.</p>
+                
+                <!-- Métricas de Impacto -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">94%</div>
+                        <div class="stat-label">Reducción de errores</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3×</div>
+                        <div class="stat-label">Más rápido que email</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Instalaciones requeridas</div>
+                    </div>
+                </div>
+
+                <!-- Chips de Sectores -->
+                <div class="sectors-list">
+                    <span class="sector-chip">Logística</span>
+                    <span class="sector-chip">Eventos</span>
+                    <span class="sector-chip">Retail</span>
+                    <span class="sector-chip">BPO</span>
+                    <span class="sector-chip">Construcción</span>
+                </div>
+            </div>
+
+            <!-- Footer del Hero -->
+            <footer class="hero-footer">
+                <p>© 2026 SynCO — Plataforma de Recolección Documental</p>
+            </footer>
+        </section>
+
+        <!-- Panel Derecho: Formulario de Login -->
+        <section class="login-form-section">
+            
+            <!-- Contenedor flotante del Prototipo (Pills superiores) -->
+            <div style="position: absolute; top: 24px; right: 24px;">
+                <div class="prototype-nav">
+                    <a href="portal.html" class="nav-pill">Portal Aspirante</a>
+                    <a href="login.html" class="nav-pill active">Login RRHH</a>
+                    <a href="admin.html" class="nav-pill">Dashboard RRHH</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta de Login -->
+            <div class="login-card">
+                <div class="login-card-header">
+                    <h1>Bienvenido de nuevo</h1>
+                    <p>Ingresa tus credenciales para acceder al panel de RRHH</p>
+                </div>
+
+                <form id="formLogin">
+                    <!-- Campo Correo Electrónico -->
+                    <div class="form-group">
+                        <label for="correo" class="form-label">Correo Electrónico</label>
+                        <div class="input-with-icon">
+                            <span class="input-icon">✉</span>
+                            <input type="email" id="correo" class="form-input" placeholder="ana.perez@synco.co" required>
+                        </div>
+                    </div>
+
+                    <!-- Campo Contraseña -->
+                    <div class="form-group">
+                        <label for="contrasena" class="form-label">Contraseña</label>
+                        <div class="input-with-icon">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="contrasena" class="form-input" placeholder="••••••••" required>
+                            <button type="button" class="toggle-password" id="btnTogglePassword" title="Mostrar/Ocultar contraseña">👁</button>
+                        </div>
+                    </div>
+
+                    <!-- Olvidaste contraseña -->
+                    <div class="forgot-password-wrapper">
+                        <a href="#" class="forgot-password-link">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <!-- Botón Iniciar Sesión -->
+                    <button type="submit" class="btn btn-primary btn-login">
+                        Ingresar al Panel ➔
+                    </button>
+                </form>
+
+                <!-- Acceso Rápido para Demostración -->
+                <div class="quick-access-section">
+                    <p class="quick-access-title">Acceso rápido para demo</p>
+                    <div class="quick-access-grid">
+                        <button class="btn-quick-access" onclick="fillQuickAccess('ana.perez@synco.co')">
+                            <span class="quick-role">Analista RRHH</span>
+                            <span class="quick-email">ana.perez@synco.co</span>
+                        </button>
+                        <button class="btn-quick-access" onclick="fillQuickAccess('admin@synco.co')">
+                            <span class="quick-role">Administrador</span>
+                            <span class="quick-email">admin@synco.co</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Script Inline para interacción demo de Login -->
+    <script>
+        function fillQuickAccess(email) {
+            document.getElementById('correo').value = email;
+            document.getElementById('contrasena').value = '12345678';
+        }
+
+        const btnTogglePassword = document.getElementById('btnTogglePassword');
+        const inputContrasena = document.getElementById('contrasena');
+
+        btnTogglePassword.addEventListener('click', () => {
+            const type = inputContrasena.getAttribute('type') === 'password' ? 'text' : 'password';
+            inputContrasena.setAttribute('type', type);
+        });
+    </script>
+</body>
+</html>
