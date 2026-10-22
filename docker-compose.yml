@@ -1,0 +1,34 @@
+# Levanta MySQL + la aplicación con un solo comando:  docker compose up --build
+services:
+  db:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: synco
+    volumes:
+      - synco_db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-psynco"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: synco
+      DB_NAME: synco_db
+      JWT_SECRET: synco_clave_secreta
+    volumes:
+      - synco_uploads:/app/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  synco_db:
+  synco_uploads:

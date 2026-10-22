@@ -1,11 +1,12 @@
 {
   "name": "synco",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "SynCO - Sincronización Corporativa (gestión de expedientes de aspirantes)",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "node --watch server.js"
   },
   "repository": {
     "type": "git",
@@ -27,5 +28,8 @@
     "jsonwebtoken": "^9.0.3",
     "multer": "^2.4.0",
     "mysql2": "^3.24.6"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }

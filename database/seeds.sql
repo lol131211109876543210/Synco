@@ -6,10 +6,10 @@ INSERT INTO roles (id, nombre) VALUES
 (2, 'Analista RRHH');
 
 -- Insertar Usuario Administrador y Analista de prueba
--- (Nota: Las contraseñas en entorno real usarán hash bcrypt)
+-- Contraseña de ambos usuarios de prueba: 12345678 (hash bcrypt real)
 INSERT INTO usuarios (nombre, correo, contrasena_hash, rol_id) VALUES 
-('Ana Pérez', 'ana.perez@synco.co', '$2a$10$w8T.N0xS5C.JdC6YJ9kO8e1/1H7eT7j7N9K.J8', 2),
-('Administrador', 'admin@synco.co', '$2a$10$w8T.N0xS5C.JdC6YJ9kO8e1/1H7eT7j7N9K.J8', 1);
+('Ana Pérez', 'ana.perez@synco.co', '$2b$10$1KUj/er1tYLLgvXLKYonjeweUt3Fr1aEgYivkp03NQ9NDOJD9PkYa', 2),
+('Administrador', 'admin@synco.co', '$2b$10$1KUj/er1tYLLgvXLKYonjeweUt3Fr1aEgYivkp03NQ9NDOJD9PkYa', 1);
 
 -- Insertar Tipos de Documentos Requeridos
 INSERT INTO tipos_documento (id, nombre, descripcion) VALUES 

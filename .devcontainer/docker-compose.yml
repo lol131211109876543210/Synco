@@ -1,0 +1,26 @@
+services:
+  app:
+    image: mcr.microsoft.com/devcontainers/javascript-node:20
+    volumes:
+      - ..:/workspaces/Synco:cached
+    command: sleep infinity
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: synco
+      DB_NAME: synco_db
+      JWT_SECRET: synco_clave_secreta
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: synco
+    volumes:
+      - synco_db:/var/lib/mysql
+
+volumes:
+  synco_db:

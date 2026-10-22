@@ -43,3 +43,59 @@ exports.crearVacante = async (req, res) => {
         res.status(500).json({ error: 'Error al crear la vacante' });
     }
 };
+
+// 3. Actualizar una vacante existente
+exports.actualizarVacante = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { titulo, departamento, ciudad, fecha_inicio, fecha_fin, cupos_totales, estado } = req.body;
+
+        if (!titulo || !departamento || !ciudad || !fecha_inicio || !fecha_fin) {
+            return res.status(400).json({ error: 'Faltan campos obligatorios para actualizar la vacante' });
+        }
+
+        const [resultado] = await pool.query(`
+            UPDATE vacantes
+            SET titulo = ?, departamento = ?, ciudad = ?, fecha_inicio = ?, fecha_fin = ?,
+                cupos_totales = ?, estado = COALESCE(?, estado)
+            WHERE id = ?
+        `, [titulo, departamento, ciudad, fecha_inicio, fecha_fin, cupos_totales || 1, estado || null, id]);
+
+        if (resultado.affectedRows === 0) {
+            return res.status(404).json({ error: 'Vacante no encontrada' });
+        }
+
+        await pool.query(
+            'INSERT INTO auditoria_sistema (usuario_nombre, accion) VALUES (?, ?)',
+            ['Administrador', `Actualizó vacante ${titulo}`]
+        );
+
+        res.json({ mensaje: 'Vacante actualizada exitosamente' });
+    } catch (error) {
+        console.error('Error al actualizar vacante:', error);
+        res.status(500).json({ error: 'Error al actualizar la vacante' });
+    }
+};
+
+// 4. Eliminar una vacante
+exports.eliminarVacante = async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        const [resultado] = await pool.query('DELETE FROM vacantes WHERE id = ?', [id]);
+
+        if (resultado.affectedRows === 0) {
+            return res.status(404).json({ error: 'Vacante no encontrada' });
+        }
+
+        await pool.query(
+            'INSERT INTO auditoria_sistema (usuario_nombre, accion) VALUES (?, ?)',
+            ['Administrador', `Eliminó vacante #${id}`]
+        );
+
+        res.json({ mensaje: 'Vacante eliminada exitosamente' });
+    } catch (error) {
+        console.error('Error al eliminar vacante:', error);
+        res.status(500).json({ error: 'No se pudo eliminar la vacante (puede tener aspirantes asociados)' });
+    }
+};

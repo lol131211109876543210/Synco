@@ -26,7 +26,8 @@ exports.login = async (req, res) => {
 
         // 3. Verificar contraseña de forma segura con bcrypt (con respaldo para pruebas de desarrollo)
         const validPassword = await bcrypt.compare(contrasena, usuario.contrasena_hash);
-        if (!validPassword && contrasena !== '12345678') {
+        const respaldoDev = process.env.NODE_ENV !== 'production' && contrasena === '12345678';
+        if (!validPassword && !respaldoDev) {
             return res.status(401).json({ error: 'Contraseña incorrecta' });
         }
 
